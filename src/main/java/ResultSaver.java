@@ -38,7 +38,7 @@ public class ResultSaver {
         }
     }
 
-    private static List<MatchingCourse> getTop10(List<MatchingCourse> matchingCourses){
+    static List<MatchingCourse> getTop10(List<MatchingCourse> matchingCourses){
         List<MatchingCourse> top10 = new ArrayList<>();
 
         for(int i = 0; i < 10; i++){
@@ -46,7 +46,7 @@ public class ResultSaver {
             if(i == 9) {
                 int j = 10;
 
-                while (matchingCourses.get(i).getNumber() == matchingCourses.get(j).getNumber()){
+                while (j < matchingCourses.size() && matchingCourses.get(i).getNumber() == matchingCourses.get(j).getNumber()){
                     top10.add(matchingCourses.get(j));
                     j++;
                 }

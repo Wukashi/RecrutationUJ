@@ -4,6 +4,16 @@ public class CourseConditions {
     private String cwiczeniaUrl;
     private boolean isCurrent;
 
+    public CourseConditions() {
+    }
+
+    public CourseConditions(String language, boolean hasCwiczenia, String cwiczeniaUrl, boolean isCurrent) {
+        this.language = language;
+        this.hasCwiczenia = hasCwiczenia;
+        this.cwiczeniaUrl = cwiczeniaUrl;
+        this.isCurrent = isCurrent;
+    }
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -26,16 +36,6 @@ public class CourseConditions {
                 && this.hasCwiczenia
                 && !this.cwiczeniaUrl.isEmpty()
                 && this.isCurrent;
-    }
-
-    @Override
-    public String toString() {
-        return "CourseConditions{" +
-                "language='" + language + '\'' +
-                ", hasCwiczenia=" + hasCwiczenia +
-                ", cwiczeniaUrl='" + cwiczeniaUrl + '\'' +
-                ", term='" + isCurrent + '\'' +
-                '}';
     }
 
     public String getCwiczeniaUrl() {

@@ -32,7 +32,7 @@ public class MatchingCourse {
         return mostMatchingInstructor;
     }
 
-    private static int countMatchedLetters(String courseNameTmp, String instructorNameTmp){
+    static int countMatchedLetters(String courseNameTmp, String instructorNameTmp){
         int matches = 0;
 
         for(char c : courseNameTmp.toCharArray()){
@@ -45,7 +45,7 @@ public class MatchingCourse {
         return matches;
     }
 
-    private static String removeDuplicates(String input) {
+    static String removeDuplicates(String input) {
         if (input == null || input.isEmpty()) {
             return input;
         }
