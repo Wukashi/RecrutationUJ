@@ -1,5 +1,5 @@
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -31,8 +31,10 @@ public class ResultSaver {
     }
 
     public static void appendToFile(String fileName, String text) {
-        try (FileWriter writer = new FileWriter(fileName, true)) {
-            writer.write(text + System.lineSeparator());
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(fileName, true), StandardCharsets.UTF_8))) {
+            writer.write(text);
+            writer.newLine();
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
