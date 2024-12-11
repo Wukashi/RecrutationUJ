@@ -27,7 +27,6 @@ public class FetchDOM {
                     if (courseConditions.findsCriteria()) {
                         matchingCourses.add(MatchingCourseGetter
                                 .getMatchingCourse(courseDocument, courseConditions.getCwiczeniaUrl()));
-                        i++;
                     }
                 }
 
