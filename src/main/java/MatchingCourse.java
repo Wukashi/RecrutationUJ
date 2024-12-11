@@ -4,7 +4,7 @@ import java.util.Set;
 public class MatchingCourse {
     private final String courseName;
     private final Set<String> instructorNames;
-    private String mostMatchingInstructor;
+    private final String mostMatchingInstructor;
     private int number = 0;
 
     public MatchingCourse(String courseName, Set<String> instructorNames) {
@@ -66,12 +66,12 @@ public class MatchingCourse {
         return this.number;
     }
 
-    @Override
-    public String toString() {
-        return "MatchingCourse{" +
-                "courseName='" + courseName + '\'' +
-                ", instructor=" + mostMatchingInstructor +
-                ", number=" + number +
-                '}';
+    public String getMostMatchingInstructor() {
+        return mostMatchingInstructor;
     }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
 }
